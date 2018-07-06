@@ -12,14 +12,8 @@ class Mindfuck:
         self.trace = trace
         self.output = ''
 
-    def run(self,inLoop = False):
+    def run(self):
         code = self.code
-        if inLoop: # if we're running a loop block skip the first value
-            if code[:1] != '[':
-                print('Loop block must start with loop open')
-                sys.exit()
-            code = code[1:]
-
         skipper = None
         idx = 0
         while idx < len(code):
