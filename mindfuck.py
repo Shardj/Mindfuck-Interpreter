@@ -38,23 +38,23 @@ class Mindfuck:
         print('Out: ' + self.output)
 
     def exeLine(self, line, idx):
-        if (line == '>'):
+        if line == '>':
             self.pointer+=1
             self.pointerRangeCheck()
 
-        elif(line == '<'):
+        elif line == '<':
             self.pointer-=1
             self.pointerRangeCheck()
 
-        elif(line == '+'):
+        elif line == '+':
             self.data[self.pointer]+=1
             self.dataValueRangeCheck()
 
-        elif(line == '-'):
+        elif line == '-':
             self.data[self.pointer]-=1
             self.dataValueRangeCheck()
 
-        elif(line == '.'):
+        elif line == '.':
             val = self.data[self.pointer]
             if self.ascii:
                 val = chr(val)
@@ -64,7 +64,7 @@ class Mindfuck:
             print(val) # TODO check for function to run instead
             self.output = self.output + val
 
-        elif(line == ','):
+        elif line == ',':
             inVal = input('input decimal: ')
             try:
                 inVal = int(inVal)
@@ -73,29 +73,29 @@ class Mindfuck:
             self.data[self.pointer] = inVal
             self.dataValueRangeCheck()
 
-        elif(line == '['):
+        elif line == '[':
             if self.data[self.pointer] == 0:
                 # if zero jump to end of loop
                 return idx + self.getBlockContentEndIdx(self.code[idx:],'[',']')
 
-        elif(line == ']'):
+        elif line == ']':
             if self.data[self.pointer] != 0:
                 # if not zero jump to start of loop
                 return self.getBlockContentStartIdx(self.code[:idx+1],'[',']')
 
-        # elif(line == '~'):
+        # elif line == '~':
         #
-        # elif(line == '*'):
+        # elif line == '*':
         #
-        # elif(line == '!'):
+        # elif line == '!':
         #
-        # elif(line == ';'):
+        # elif line == ';':
         #
-        # elif(line == ':'):
+        # elif line == ':':
         #
-        # elif(line == '{'):
+        # elif line == '{':
         #
-        # elif(line == '}'):
+        # elif line == '}':
 
         return True
 
