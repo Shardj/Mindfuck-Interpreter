@@ -10,6 +10,7 @@ class Mindfuck:
         self.pointer = 0
         self.ascii = ascii
         self.trace = trace
+        self.output = ''
 
     def run(self,inLoop = False):
         code = self.code
@@ -40,7 +41,7 @@ class Mindfuck:
                 print('err lineResponse: ' + lineResponse) # failed response, shouldnt ever get here unless syntax is fucked
                 sys.exit()
 
-        return [self.data, self.pointer]
+        print('Out: ' + self.output)
 
     def exeLine(self, line, idx):
         if (line == '>'):
@@ -67,6 +68,7 @@ class Mindfuck:
                 val = str(val) + ' ' # if not ascii space out the output
 
             print(val) # TODO check for function to run instead
+            self.output = self.output + val
 
         elif(line == ','):
             inVal = input('input decimal: ')
@@ -75,7 +77,7 @@ class Mindfuck:
             except ValueError:
                 print("That's not an int!")
             self.data[self.pointer] = inVal
-            dataValueRangeCheck()
+            self.dataValueRangeCheck()
 
         elif(line == '['):
             if self.data[self.pointer] == 0:
@@ -195,5 +197,5 @@ elif trace == 'no':
 else:
     print('Invalid input: ' + trace)
     sys.exit()
-    
+
 Mindfuck(code, ascii, trace).run()
