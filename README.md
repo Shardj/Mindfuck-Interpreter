@@ -1,5 +1,7 @@
 # Mindfuck - A Brainfuck dialect for the truly insane
 
+Warning, this is the shittiest interpreter ever, I'm speed coding this just so I have something to check against when I make a proper compiler later
+
     Original brainfuck syntax:
     > 	increment the data pointer (to point to the next cell to the right).
     < 	decrement the data pointer (to point to the next cell to the left).
