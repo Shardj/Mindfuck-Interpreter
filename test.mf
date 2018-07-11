@@ -1,0 +1,6 @@
+>[-]+>[-];[<->[-]]<[>--------[-->+++<]>*+++[->+++<]>*[--->+<]>----*+*[++>---<]>*--[-->+++++<]>-*-------*[-]] #set naming string to test.mf if we cant find file, without touching first cell
+>[-]@ # move pointer to first cell, without touching first cell
+. # output first cell, we should expect to see 0 then 1 on the second call
+>[-]+<[>[-]] # set the second cell to one, if the first cell is not zero set the second cell to zero. Second cell is now the inverse condition of the first cell
+>>[-]+@ # move pointer to second cell without changing first or second cell values
+[<+?[-]] # if the second cell is not zero (first cell zero), add one to first cell and run what is set in naming cell
