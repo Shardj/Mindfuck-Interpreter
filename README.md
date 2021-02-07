@@ -1,6 +1,6 @@
 # Mindfuck - A Brainfuck dialect for the truly insane
 
-Warning, this is the shittiest interpreter ever, I'm speed coding this just so I have something to check against when I make a proper compiler later. Also then I can have fun with the new syntax sooner rather than later.
+Warning, this is the shittiest interpreter ever, it's just something I threw together because I wanted to be able to mess around with some new syntax in Mindfuck. And hey now I can say I've technically created a programming language?
 
 ### Original brainfuck syntax:
     > 	increment the data pointer (to point to the next cell to the right).
